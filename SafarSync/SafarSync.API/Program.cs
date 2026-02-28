@@ -1,6 +1,7 @@
 
 using SafarSync.API.Data;
 using SafarSync.API.Interfaces;
+using SafarSync.API.Repository;
 
 namespace SafarSync.API
 {
@@ -19,6 +20,11 @@ namespace SafarSync.API
 
             //DB Connection Factory
             builder.Services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
+            builder.Services.AddScoped<IExpenseRepository, ExpenseRepository>();
+            builder.Services.AddScoped<IItineraryRepository, ItineraryRepository>();
+            builder.Services.AddScoped<ITaskRepository, TaskRepository>();
+            builder.Services.AddScoped<ITripRepository, TripRepository>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             var app = builder.Build();
 
