@@ -53,7 +53,7 @@ namespace SafarSync.API.Repository
 
                 return await connection.QueryAsync<TaskItem>("SELECT * FROM tasks WHERE trip_id=@TripId", new { TripId = tripId });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Log the exception (not implemented here)
                 throw new Exception("An error occurred while retrieving tasks for the trip.", ex);
@@ -68,10 +68,11 @@ namespace SafarSync.API.Repository
 
                 await connection.ExecuteAsync("UPDATE tasks SET is_completed=true WHERE id=@TaskId", new { TaskId = taskId });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Log the exception (not implemented here)
                 throw new Exception("An error occurred while marking the task as complete.", ex);
             }
+        }
     }
 }

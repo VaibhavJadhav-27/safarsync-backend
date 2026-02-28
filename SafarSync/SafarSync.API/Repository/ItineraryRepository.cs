@@ -24,7 +24,7 @@ namespace SafarSync.API.Repository
 
                 await connection.ExecuteAsync(sql, item);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Log the exception (not implemented here)
                 throw new Exception("An error occurred while adding the itinerary item.", ex);
@@ -37,9 +37,9 @@ namespace SafarSync.API.Repository
             {
                 using var connection = _dbFactory.CreateConnection();
 
-                await connection.ExecuteAsync("DELETE FROM itinerary_items WHERE id=@Id",new { Id = id });
+                await connection.ExecuteAsync("DELETE FROM itinerary_items WHERE id=@Id", new { Id = id });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Log the exception (not implemented here)
                 throw new Exception("An error occurred while deleting the itinerary item.", ex);
@@ -56,7 +56,7 @@ namespace SafarSync.API.Repository
 
                 return await connection.QueryAsync<ItineraryItem>(sql, new { TripId = tripId });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Log the exception (not implemented here)
                 throw new Exception("An error occurred while retrieving itinerary items.", ex);
@@ -81,10 +81,11 @@ namespace SafarSync.API.Repository
                         request.Time
                     });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Log the exception (not implemented here)
                 throw new Exception("An error occurred while updating the itinerary item.", ex);
             }
+        }
     }
 }
