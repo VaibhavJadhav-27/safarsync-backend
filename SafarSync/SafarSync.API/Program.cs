@@ -1,4 +1,7 @@
 
+using SafarSync.API.Data;
+using SafarSync.API.Interfaces;
+
 namespace SafarSync.API
 {
     public class Program
@@ -13,6 +16,9 @@ namespace SafarSync.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            //DB Connection Factory
+            builder.Services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
             var app = builder.Build();
 
