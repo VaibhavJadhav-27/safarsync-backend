@@ -1,0 +1,6 @@
+@SafarSync.API_HostAddress = http://localhost:5133
+
+GET {{SafarSync.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
